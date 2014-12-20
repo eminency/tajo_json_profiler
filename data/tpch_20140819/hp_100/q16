@@ -1,0 +1,9 @@
+EB1,CSVScanner,SeqScanExec_0,StoreTableExec_3,Task
+
+EB3,CSVScanner,SeqScanExec_0,SeqScanExec_3,HashJoinExec_8,HashShuffleFileWriteExec_-1,Task
+EB4,CSVScanner,SeqScanExec_1,HashShuffleFileWriteExec_-1,Task
+EB5,RawFileScanner,HashJoinExec_9,StoreTableExec_6,Task
+
+EB1,CSVScanner,SeqScanExec_0,DistinctGroupbyHashAggregationExec_11,HashShuffleFileWriteExec_-1,Task
+EB2,RawFileScanner,ExternalSortExec_-1,SortAggregateExec_9,DistinctGroupbySortAggregationExec_10,ExternalSortExec_14,RangeShuffleFileWriteExec_-1,Task
+EB3,RawFileScanner,ExternalSortExec_5,StoreTableExec_-1,Task

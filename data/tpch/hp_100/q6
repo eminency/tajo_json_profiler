@@ -1,0 +1,2 @@
+EB1,CSVScanner,SeqScanExec,HashAggregateExec,HashShuffleFileWriteExec,Task
+EB2,RawFileScanner,SeqScanExec,HashAggregateExec,StoreTableExec,Task
