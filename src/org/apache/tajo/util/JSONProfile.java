@@ -35,6 +35,7 @@ public class JSONProfile {
 		om.getSerializationConfig().enable(Feature.INDENT_OUTPUT);
 		
 		//add disk and network, others are CPU
+		stepResourceMap.put("InternalParquetRecordReader.page", RESOURCE_TYPE.DISK);
 		stepResourceMap.put("CSVScanner.page", RESOURCE_TYPE.DISK);
 		stepResourceMap.put("HashShuffleFileWriteExec.flush.nanoTime", RESOURCE_TYPE.DISK);
 		stepResourceMap.put("HashShuffleFileWriteExec.next.nanoTime", RESOURCE_TYPE.DISK);
