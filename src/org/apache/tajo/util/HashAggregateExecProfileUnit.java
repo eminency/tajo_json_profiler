@@ -25,5 +25,4 @@ public class HashAggregateExecProfileUnit extends ProfileUnit {
 		
 		return steps;
 	}
-
 }
