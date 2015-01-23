@@ -268,7 +268,7 @@ public class JSONProfile {
 		
 		public ExecData getExec(String name) {
 			for (ExecData eachExec: execs) {
-				if (name.equals(eachExec.name)) {
+				if (eachExec.name.startsWith(name)) {
 					return eachExec;
 				}
 			}
@@ -316,19 +316,21 @@ public class JSONProfile {
 			float sumRate2 = 0;
 			String prefix = printEbId;
 			
+			String newLine = "";
 			for (Step eachStep: steps) {
-				result += prefix + "," + eachStep.toString() + "\n";
+				result += newLine + prefix + "," + eachStep.toString();
 				sumRate1 += eachStep.rate1;
 				sumRate2 = eachStep.rate2;
 				prefix = "";
+				newLine = "\n";
 			}
-//			result += prefix + ",SUM," + 
-//					df1.format(totalSum) + "," + 
-//					df1.format(inTuples) + "," + 
-//					df1.format(outTuples) + "," + 
-//					df1.format(realSum) + "," + 
-//					df2.format(sumRate1) + "," + 
-//					df2.format(sumRate2);
+			result += newLine + prefix + ",SUM," + 
+					df1.format(totalSum) + "," + 
+					df1.format(inTuples) + "," + 
+					df1.format(outTuples) + "," + 
+					df1.format(realSum) + "," + 
+					df2.format(sumRate1) + "," + 
+					df2.format(sumRate2);
 			return result;
 		}
 	}
