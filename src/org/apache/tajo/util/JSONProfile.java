@@ -44,7 +44,7 @@ public class JSONProfile {
 		stepResourceMap.put("RangeShuffleFileWriteExec.next.nanoTime",RESOURCE_TYPE.DISK);
 		stepResourceMap.put("ExternalSortExec.SortScan.nanoTime", RESOURCE_TYPE.DISK);
 		stepResourceMap.put("ExternalSortExec.SortWrite.nanoTime", RESOURCE_TYPE.DISK);
-		stepResourceMap.put("fetch.write:", RESOURCE_TYPE.DISK);
+		stepResourceMap.put("fetch.write", RESOURCE_TYPE.DISK);
 		stepResourceMap.put("fetch", RESOURCE_TYPE.NETWORK);
 	}
 	
@@ -137,6 +137,7 @@ public class JSONProfile {
 				System.out.println("\n\n" + eachEb.fileName + "\n");	
 				prevFileName = eachEb.fileName;
 			}
+
 			for (int i = 1; i < plans[ebIndex].length; i++) {
 				ExecData execData = eachEb.getExec(plans[ebIndex][i].trim());
 				for (Step eachStep: execData.steps) {
